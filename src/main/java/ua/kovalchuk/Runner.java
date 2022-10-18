@@ -18,10 +18,10 @@ public class Runner implements CommandLineRunner {
         String outputVideoPath = "/Users/arkovalchuk/projects/ffmpeg-video-to-gif/src/main/resources/output.gif";
         ProcessBuilder pb = new ProcessBuilder(
             ffmpeg,
-            "-t", "30",
+            "-t", "5",
+            "-filter_complex", "fps=5,scale=320:-1",
             "-i", inputVideoPath,
-            "-filter_complex", "fps=15,scale=320:-1",
-            "-f", "gif", outputVideoPath
+             outputVideoPath
         );
         pb.inheritIO().start().waitFor();
 
