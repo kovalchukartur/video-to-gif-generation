@@ -16,7 +16,7 @@ public class Runner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        log.warn("Run runner");
+        log.warn("Start runner");
 
         String fileName = "input.mov";
 
