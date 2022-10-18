@@ -16,7 +16,13 @@ public class Runner implements CommandLineRunner {
         String ffmpeg = Loader.load(org.bytedeco.ffmpeg.ffmpeg.class);
         String inputVideoPath = "/Users/arkovalchuk/projects/ffmpeg-video-to-gif/src/main/resources/input.mov";
         String outputVideoPath = "/Users/arkovalchuk/projects/ffmpeg-video-to-gif/src/main/resources/output.gif";
-        ProcessBuilder pb = new ProcessBuilder(ffmpeg, "-ss", "00:00:00", "-r", "5", "-i", inputVideoPath, "-f", "gif", outputVideoPath);
+        ProcessBuilder pb = new ProcessBuilder(
+            ffmpeg,
+            "-ss", "00:00:00",
+            "-r", "5",
+            "-i", inputVideoPath,
+            "-f", "gif", outputVideoPath
+        );
         pb.inheritIO().start().waitFor();
 
         log.warn("Finish runner");
